@@ -1,0 +1,65 @@
+* {
+  font-family: "Poppins", sans-serif;
+}
+.top-section {
+  display: flex;
+}
+#profile {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+}
+.img {
+  display: flex;
+  align-content: stretch;
+  justify-content: center;
+  align-items: baseline;
+  flex-direction: column;
+  margin-right: 100px;
+}
+#github-link {
+  margin: auto;
+  margin-top: 20px;
+  white-space: nowrap;
+}
+
+#bio {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+a {
+  color: black;
+  font-size: 17px;
+}
+
+.language {
+  display: inline;
+  font-size: 18px;
+  padding: 10px;
+  background-color: #007bff;
+}
+
+#linkToRepo {
+  margin-bottom: 24px;
+}
+
+.item {
+  margin: 100px;
+  width: 434px;
+  display: inline-flex;
+  flex-direction: column;
+  border: 2px solid black;
+  padding: 10px;
+}
+
+#form {
+  border: 1px black solid;
+  border-radius: 10px;
+  padding: 5px;
+  font-size: 18px;
+  margin: auto;
+}
+.input {
+  display: flex;
+}
