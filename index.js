@@ -8,11 +8,18 @@ document.getElementById("form").addEventListener("keyup", function (e) {
 });
 
 async function getUser(username) {
-  const resp = await fetch(API_URL + username);
-  const respData = await resp.json();
-  getRepos(username);
-  console.log(respData);
-  addTopSection(respData);
+  try {
+    const resp = await fetch(API_URL + username);
+    const respData = await resp.json();
+    if (respData.html_url === undefined) {
+      alert("No user");
+    } else {
+      getRepos(username);
+      addTopSection(respData);
+    }
+  } catch (error) {
+    alert("Some Error Occured");
+  }
 }
 
 function addTopSection(data) {
@@ -22,7 +29,7 @@ function addTopSection(data) {
       id="github-link"
       href="${data.html_url}"
       target="_blank"
-      ><img src="imgs/link.svg" alt="" />Link To Profile</a
+      ><img id="link-svg" src="imgs/link.svg" alt="link to profiles" />Link To Profile</a
     >
   </div>
   <div class="name-bio">
@@ -31,8 +38,8 @@ function addTopSection(data) {
     ${data.bio}
     </p>
     <p><img src="imgs/loc.svg" alt="" />${data.location}</p>
-    <a href="${data.twitter_username}" target="_blank"
-      >Twitter</a
+    <p>Twitter User Name:${data.twitter_username}</p
+      
     >
   </div>`;
 
@@ -40,9 +47,17 @@ function addTopSection(data) {
 }
 
 async function getRepos(username) {
-  const resp = await fetch(API_URL + username + "/repos");
-  const respData = await resp.json();
-  addReposToCard(respData);
+  try {
+    const resp = await fetch(API_URL + username + "/repos");
+    const respData = await resp.json();
+    if (respData.html_url === undefined) {
+      alert("No Repos");
+    } else {
+      addReposToCard(respData);
+    }
+  } catch (error) {
+    alert("Some error occured");
+  }
 }
 
 function addReposToCard(repos) {

@@ -29,6 +29,7 @@
 
 a {
   color: black;
+  display: flex;
   font-size: 17px;
 }
 
@@ -68,7 +69,6 @@ a {
 .input {
   text-align: center;
 }
-
 @media only screen and (max-width: 784px) {
   #repos {
     font-size: 12px;
