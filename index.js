@@ -53,7 +53,7 @@ async function getRepos(username) {
     console.log(respData)
     addReposToCard(respData);
     }
-  } catch (error) {
+   catch (error) {
     alert("Some error occured");
   }
 }
