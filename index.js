@@ -22,15 +22,15 @@ function addTopSection(data) {
       id="github-link"
       href="${data.html_url}"
       target="_blank"
-      ><img src="link.svg" alt="" />Link To Profile</a
+      ><img src="imgs/link.svg" alt="" />Link To Profile</a
     >
   </div>
   <div class="name-bio">
-    <h1>${data.name}</h1>
+    <h1 id="profileName">${data.name}</h1>
     <p id="bio">
     ${data.bio}
     </p>
-    <p><img src="loc.svg" alt="" />${data.location}</p>
+    <p><img src="imgs/loc.svg" alt="" />${data.location}</p>
     <a href="${data.twitter_username}" target="_blank"
       >Twitter</a
     >

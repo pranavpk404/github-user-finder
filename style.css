@@ -3,24 +3,23 @@
 }
 .top-section {
   display: flex;
+  justify-content: flex-start;
 }
 #profile {
   width: 250px;
   height: 250px;
+  border: 2px solid grey;
   border-radius: 50%;
+  margin-left: 2px;
 }
 .img {
   display: flex;
-  align-content: stretch;
-  justify-content: center;
-  align-items: baseline;
   flex-direction: column;
-  margin-right: 100px;
+  margin-right: 50px;
 }
 #github-link {
   margin: auto;
   margin-top: 20px;
-  white-space: nowrap;
 }
 
 #bio {
@@ -37,16 +36,22 @@ a {
   display: inline;
   font-size: 18px;
   padding: 10px;
-  background-color: #007bff;
+  font-weight: bold;
+  background-color: #0080ff9f;
 }
 
 #linkToRepo {
   margin-bottom: 24px;
 }
-
+#repos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
 .item {
-  margin: 100px;
-  width: 434px;
+  margin-bottom: 10px;
+
+  width: 40%;
   display: inline-flex;
   flex-direction: column;
   border: 2px solid black;
@@ -61,5 +66,35 @@ a {
   margin: auto;
 }
 .input {
-  display: flex;
+  text-align: center;
+}
+
+@media only screen and (max-width: 784px) {
+  #repos {
+    font-size: 12px;
+  }
+}
+@media only screen and (max-width: 569px) {
+  #profile {
+    width: 150px;
+    height: 150px;
+  }
+  #profileName {
+    font-size: 18px;
+  }
+  .item {
+    width: 100%;
+  }
+  #bio {
+    font-size: 13px;
+
+    font-size: 13px;
+  }
+  .language {
+    font-size: 13px;
+  }
+  .item {
+    font-size: 13px;
+    margin: 25px;
+  }
 }
