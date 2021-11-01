@@ -51,10 +51,7 @@ async function getRepos(username) {
     const resp = await fetch(API_URL + username + "/repos");
     const respData = await resp.json();
     console.log(respData)
-    if (respData.html_url === undefined) {
-      alert("No Repos");
-    } else {
-      addReposToCard(respData);
+    addReposToCard(respData);
     }
   } catch (error) {
     alert("Some error occured");
