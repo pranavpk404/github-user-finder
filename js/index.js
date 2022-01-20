@@ -24,6 +24,11 @@ async function getUser(username) {
 }
 
 function addTopSection(data) {
+  const twitter_username =
+    data.twitter_username !== null ? data.twitter_username : "Not Available";
+  const location = data.location !== null ? data.location : "Not Available";
+  const name = data.name !== null ? data.name : "Not Available";
+  const bio = data.bio !== null ? data.bio : "This profile has no bio";
   let card = ` <div class="img">
     <img src="${data.avatar_url}" alt="profile" id="profile" />
     <a
@@ -34,14 +39,12 @@ function addTopSection(data) {
     >
   </div>
   <div class="name-bio">
-    <h1 id="profileName">${data.name}</h1>
+    <h1 id="profileName">${name}</h1>
     <p id="bio">
-    ${data.bio}
+    ${bio}
     </p>
-    <p><img src="imgs/loc.svg" alt="" />${data.location}</p>
-    <p>Twitter User Name:${data.twitter_username}</p
-      
-    >
+    <p><img class="m5" src="imgs/loc.svg" alt="" />${location}</p>
+    <p><img class="m5" src="imgs/twitter.svg" alt="" />${twitter_username}</p>
   </div>`;
 
   document.getElementById("top-section").innerHTML = card;
@@ -60,7 +63,6 @@ async function getRepos(username) {
 function addReposToCard(repos) {
   document.getElementById("repos").innerHTML = "";
   repos.forEach((repo) => {
-    // console.log(repo);
     let card = `      
 
     <div class="item">
